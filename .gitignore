@@ -1,0 +1,32 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Python:
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+#my_config
+.idea
+__pycache__
+api_entity
+api_freq
+api_seg&tag&parser
+api_sentiment	
+api_text_classifier
+api_text_similar
+api_w2v
+crf_tool
+dict
+external_data
+ltp
+model
+temp
+w2v_model
+word_count
+*.docx
+*.pptx
