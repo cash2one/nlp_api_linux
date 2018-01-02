@@ -181,5 +181,5 @@ api.add_resource(segmentor,'/segmentor')
 api.add_resource(freq, '/freq')
 api.add_resource(entity, '/entity')
 
-if __name__ == '__main__':
-    app.run(debug=True, port=5555)
+#if __name__ == '__main__':
+#    app.run(debug=True, port=5555)

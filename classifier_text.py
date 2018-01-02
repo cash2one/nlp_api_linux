@@ -22,17 +22,17 @@ from sklearn.feature_extraction.text import CountVectorizer
 
 #读取文件
 try:
-    train_text = pd.read_csv(r'D:/dta/train.csv',encoding='utf-8')
+    train_text = pd.read_csv('./dta/train.csv',encoding='utf-8')
 except:
-    train_text = pd.read_csv(r'D:/dta/train.csv',encoding='gbk')
+    train_text = pd.read_csv('./dta/train.csv',encoding='gbk')
 
-test_text = pd.read_csv(r'D:/dta/test1.csv',encoding='gb18030')
+test_text = pd.read_csv('./dta/test1.csv',encoding='gb18030')
 
 
 #去停用词
 def jieba_cut(data):
     
-    stopword=[line.strip() for line in codecs.open(r'D:\dta\stopword.txt','r','utf-8').readlines()]
+    stopword=[line.strip() for line in codecs.open('./dta/stopword.txt','r','utf-8').readlines()]
 
     woe=[]
     for i in range(len(data)):
@@ -131,7 +131,7 @@ def cv_text_model(X):
         model=clf.fit(x_train, y_train)
         r=clf.score(x_test,y_test)
         mean_r2.append(r)
-        joblib.dump(model,r'D:\dta\SVM_%s.model'%(i))
+        joblib.dump(model,'./dta/SVM_%s.model'%(i))
         
     return mean_r2,cc,dd
 
@@ -140,7 +140,7 @@ def cv_text_model(X):
 
 def jieba_cut_test(data):
     
-    stopword=[line.strip() for line in codecs.open(r'D:\dta\stopword.txt','r','utf-8').readlines()]
+    stopword=[line.strip() for line in codecs.open('./dta/stopword.txt','r','utf-8').readlines()]
 
     woe=[]
     
@@ -190,7 +190,7 @@ def text_classifier(text):
 #        pred_result=np.zeros(5)
  
         for i in range(5):
-            model = joblib.load(r'D:\dta\SVM_%s.model'%(i))
+            model = joblib.load('./dta/SVM_%s.model'%(i))
             result = model.predict(X_test)
             pred_result.iloc[:,i]=result
               

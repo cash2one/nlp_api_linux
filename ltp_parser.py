@@ -24,9 +24,10 @@ def parse(content):
     words_list, tags_list, symptom_flag_list = segmentor_tag(content)
     parser = Parser() # 初始化实例
     try:
-        parser.load('D:\\ltp\\ltp_data\\parser.model')  # 加载模型
+        parser.load('./ltp/ltp_data/parser.model')  # 加载模型
     except:
-        parser.load('C:\\Users\\01055221\\Desktop\\API_NLP\\ltp\\ltp_data\\parser.model')  # 加载模型
+        print ('load parser model failed, can not find model in ./ltp/ltp_data/parser.model')
+#        parser.load('C:\\Users\\01055221\\Desktop\\API_NLP\\ltp\\ltp_data\\parser.model')  # 加载模型
     # 模型地址重新部署时需要更新
     arcs = parser.parse(words_list,tags_list)  # 句法分析
     parser.release()  # 释放模型

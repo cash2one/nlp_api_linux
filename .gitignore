@@ -12,7 +12,6 @@ __pycache__/
 
 #my_config
 .idea
-__pycache__
 api_entity
 api_freq
 api_seg&tag&parser
@@ -26,6 +25,7 @@ external_data
 ltp
 model
 temp
+dta
 w2v_model
 word_count
 *.docx
